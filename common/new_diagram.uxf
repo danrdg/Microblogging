@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>10</y>
+      <w>250</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>GUI
+Package::es.uned.common
+--
+
+--
+int despliegaMenu(String[])
+void imprimeArray (ArrayList&lt;String&gt;)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>10</y>
+      <w>350</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Package::es.uned.common
+{extends Remote}
+--
+
+--
+boolean creaUsuario (String,String,String)
+boolean logeaUsuario (String,String,CallbackUsuarioInterface)
+boolean bloqueaUsuario (String)
+void logoutUsuario (String)
+boolean desbloqueaUsuario (String)
+String daContraseña (String)
+String daNombre (String)
+ArrayList&lt;String&gt; daSeguidores (String)
+ArrayList&lt;String&gt; daSeguidos (String)
+boolean compruebaNick (String)
+void añadeSeguidor (String,String)
+void añadeSeguido (String,String)
+void eliminaSeguidor (String,String)
+void eliminaSeguido (String,String)
+boolean siConectado (String)
+boolean siBloqueado (String)
+ArrayList&lt;String&gt; daLista ()
+void trinar (Trino,String)
+void almacenar (Trino,String)
+void archivar(Trino)
+void guardaBloq(String,Trino)
+boolean pendientes (String nick)
+ArrayList&lt;Trino&gt; darPendientes (String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>10</y>
+      <w>320</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ServicioAutenticacionInterface
+Package::es.uned.common
+{extends Remote}
+--
+
+--
+boolean registrar (String,String,String)
+autenticar (String,String,CallbackUsuarioInterface)
+logout (String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>130</y>
+      <w>250</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Trino
+Package::es.uned.common
+--
+-final long serialVersionUID
+-String trino;
+-String nickPropietario
+-long timestamp;
+--
+String GetTrino()
+String GetNickPropietario()
+long GetTimestamp()
+String toString()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>180</y>
+      <w>320</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ServicioGestorInterface
+Package::es.uned.common
+{extends Remote}
+--
+
+--
+ArrayList&lt;String&gt; info (String,String)
+boolean seguir (String,String)
+noSeguir (String,String)
+enviarTrino (String,Trino)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>330</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+CallbackUsuarioInterface
+Package::es.uned.common
+{extends Remote}
+--
+
+--
+void recibeTrino (Trino)</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

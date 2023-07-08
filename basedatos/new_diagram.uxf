@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>20</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Basededatos
+Package::es.uned.basedatos
+--
+-URLDatos : String
+--
+void informar()
+void trinos()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>230</x>
+      <y>20</y>
+      <w>430</w>
+      <h>620</h>
+    </coordinates>
+    <panel_attributes>ServicioDatosImpl
+Package::es.uned.basedatos
+{extends UnicastRemoteObject} 
+{implements ServicioDatosInterface}
+--
+-ArrayList&lt;String&gt; conectados
+-ArrayList&lt;String&gt; bloqueados
+-ArrayList&lt;Trino&gt; trinos
+-Map &lt;String, List&lt;Trino&gt;&gt; bloqueado_trinos
+-Map &lt;String, List&lt;Trino&gt;&gt; buzon
+-Map &lt;String, String&gt; nick_contraseña
+-Map &lt;String, String&gt; nick_nombre
+-Map &lt;String,List&lt;String&gt;&gt; nick_seguidores
+-Map &lt;String,List&lt;String&gt;&gt; nick_seguidos
+-Map &lt;String,CallbackUsuarioInterface&gt; nick_interface
+--
+boolean creaUsuario (String,String,String)
+boolean logeaUsuario (String,String,CallbackUsuarioInterface)
+boolean bloqueaUsuario (String)
+void logoutUsuario (String)
+boolean desbloqueaUsuario (String)
+String daContraseña (String)
+String daNombre (String)
+ArrayList&lt;String&gt; daSeguidores (String)
+ArrayList&lt;String&gt; daSeguidos (String)
+boolean compruebaNick (String)
+void añadeSeguidor (String,String)
+void añadeSeguido (String,String)
+void eliminaSeguidor (String,String)
+void eliminaSeguido (String,String)
+boolean siConectado (String)
+boolean siBloqueado (String)
+ArrayList&lt;String&gt; daLista ()
+void trinar (Trino,String)
+void almacenar (Trino,String)
+void archivar(Trino)
+void guardaBloq(String,Trino)
+boolean pendientes (String nick)
+ArrayList&lt;Trino&gt; darPendientes (String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

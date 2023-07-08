@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>10</y>
+      <w>340</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>ServicioGestorImpl
+Package::es.uned.servidor
+{extends UnicastRemoteObject} 
+{implements ServicioDatosInterface}
+--
+-final String URLDatos
+--
+ArrayList&lt;String&gt; info (String,String)
+boolean seguir (String,String)
+boolean noSeguir (String,String)
+void enviarTrino (String,Trino)
+ArrayList&lt;String&gt; listar ()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>10</y>
+      <w>320</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>ServicioAutenticacionImpl
+Package::es.uned.servidor
+{extends UnicastRemoteObject} 
+{implements ServicioDatosInterface}
+--
+-final String URLDatos
+--
+boolean autenticar (String,String,CallbackUsuarioInterface)
+boolean registrar (String,String,String)
+void logout (String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>10</y>
+      <w>200</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Servidor
+Package::es.uned.servidor
+--
+-final String URLGestor
+-final String URLAutenticacion
+-final String URLDatos
+-BufferedReader obj
+--
+void informar()
+void registrados()
+void logeados()
+void bloquear()
+void desbloquear()</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
